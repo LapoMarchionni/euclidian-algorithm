@@ -11,7 +11,16 @@ def gcd(a, b):
 
 
 def egcd(a, b):
-    """Extends the euclidian gdc with negative numbers."""
+    """Extends the basic euclidian GDC.
+    It recursively calls to egcd(a, b) with:
+        a = b % a
+        b = b
+    Args:
+        a: first integer value
+        b: second integer value
+    Returns:
+        The GCD g, and the values of x and y
+    """
     if a == 0:
         return (b, 0, 1)
     g, y, x = egcd(b % a, a)
